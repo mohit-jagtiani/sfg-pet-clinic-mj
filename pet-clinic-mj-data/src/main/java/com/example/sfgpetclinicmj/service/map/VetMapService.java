@@ -2,7 +2,6 @@ package com.example.sfgpetclinicmj.service.map;
 
 import com.example.sfgpetclinicmj.model.Vet;
 import com.example.sfgpetclinicmj.service.VetService;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -34,5 +33,10 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Vet findByLastName(String lastName) {
+        return null;
     }
 }
