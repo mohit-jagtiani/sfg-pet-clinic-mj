@@ -1,8 +1,13 @@
 package com.example.sfgpetclinicmj.model;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity{
     @Column(name = "first_name")
@@ -11,19 +16,4 @@ public class Person extends BaseEntity{
     @Column(name = "last_Name")
     private String lastName;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }
