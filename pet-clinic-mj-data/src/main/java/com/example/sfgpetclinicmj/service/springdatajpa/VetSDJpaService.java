@@ -6,6 +6,7 @@ import com.example.sfgpetclinicmj.service.VetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -26,14 +27,11 @@ public class VetSDJpaService implements VetService {
         return vetRepository.findByLastName(lastName);
     }
 
-   /* @Override
-    public List<Owner> findAllByLastNameLike(String lastName) {
-        return ownerRepository.findAllByLastNameLike(lastName);
-    } */
-
     @Override
     public Set<Vet> findAll() {
-        return (Set<Vet>) vetRepository.findAll();
+        Set<Vet> vets = new HashSet<>();
+        vetRepository.findAll().forEach(vets::add);
+        return vets;
     }
 
     @Override

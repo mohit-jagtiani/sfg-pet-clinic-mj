@@ -1,7 +1,6 @@
 package com.example.sfgpetclinicmj.model;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,4 +19,7 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
+    public boolean isNew(){
+        return this.id == null;
+    }
 }

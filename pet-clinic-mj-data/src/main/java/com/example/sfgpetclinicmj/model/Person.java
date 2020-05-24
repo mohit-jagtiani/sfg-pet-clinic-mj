@@ -1,7 +1,6 @@
 package com.example.sfgpetclinicmj.model;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;

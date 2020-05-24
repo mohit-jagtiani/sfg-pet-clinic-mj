@@ -6,6 +6,7 @@ import com.example.sfgpetclinicmj.service.PetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -18,7 +19,9 @@ public class PetSDJpaService implements PetService {
     }
     @Override
     public Set<Pet> findAll() {
-        return (Set<Pet>) petRepository.findAll();
+        Set<Pet> pets = new HashSet<>();
+        petRepository.findAll().forEach(pets::add);
+        return pets;
     }
 
     @Override
